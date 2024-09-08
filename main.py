@@ -6,8 +6,10 @@ import subprocess
 import boto3
 import validate_cloud_optimized_geotiff as cog_validator
 from osgeo import gdal
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # Enables CORS for all routes
 
 bucket_name = "final-cog"
 input_bucket_name = "kdg-raw"
